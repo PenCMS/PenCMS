@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: PenCMS
+        psr4_prefix: PenCMS
+        src_path: app

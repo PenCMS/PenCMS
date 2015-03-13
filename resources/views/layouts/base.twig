@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PenCMS {% if block('title') %} · {% endif %}{% block title %}{% endblock %}</title>
+    <link href="{{ asset('css/global.css') }}" rel="stylesheet" type="text/css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-pencms navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">باز/بستن منو</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="{{ url('home') }}">
+                        خانه
+                    </a>
+                </li>
+                <li><a href="#about">درباره</a></li>
+                <li><a href="#contact">تماس با ما</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a>{{ auth_user.user.name }}</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<header>
+    <div class="container">
+        <h1 class="hidden">PenCMS</h1>
+        <div class="logo">
+            <img src="{{ asset('img/logo.png') }}" alt="Logo">
+        </div>
+        <ol class="breadcrumb">
+            <li class="active">PenCMS</li>
+        </ol>
+    </div>
+</header>
+<section>
+    <div class="container" id="content">
+        {% if block('sidebar') %}
+            <div class="row">
+                <div class="col-md-8 col-lg-9">
+                    {% block content %}{% endblock %}
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    {% block sidebar %}{% endblock %}
+                </div>
+            </div>
+        {% else %}
+            {{ block('content') }}
+        {% endif %}
+    </div>
+</section>
+<footer>
+    <div class="container">
+        با افتخار قدرت‌گرفته از: <a href="http://www.pencms.ir" target="_blank" title="سیستم مدیریت محتوای PenCMS">PenCMS</a>
+    </div>
+</footer>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+{% block js %}{% endblock %}
+</body>
+</html>

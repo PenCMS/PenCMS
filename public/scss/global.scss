@@ -1,0 +1,17 @@
+$icon-font-path: "../fonts/bootstrap/";
+$fa-font-path: "../fonts/FontAwesome";
+@import "bootstrap/_bootstrap.scss";
+@import "bootstrap-rtl/bootstrap-rtl.scss";
+@import "fontawesome/font-awesome.scss";
+
+@import "pencms/yekan.scss";
+@import "pencms/global.scss";
+@import "pencms/home.scss";
+@import "pencms/signin.scss";
+
+// CodeIgniter profiler
+#codeigniter_profiler {
+	direction: ltr;
+	text-align: left;
+	display: none;
+}
