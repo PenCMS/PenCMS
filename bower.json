@@ -1,0 +1,27 @@
+{
+  "name": "PenCMS",
+  "version": "1.0.0",
+  "description": "PHP Persian CMS",
+  "authors": [
+    "AliReza Tofighi Mohammadi"
+  ],
+  "license": "MIT",
+  "homepage": "http://pencms.ir",
+  "private": true,
+  "main": "public/assets/css/main.css",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">= 2.1.0",
+    "modernizr": ">= 2.7.2",
+    "fastclick": ">=0.6.11",
+    "jquery.cookie": "~1.4.0",
+    "jquery-placeholder": "~2.0.7",
+    "foundation": "~5.5.1"
+  }
+}

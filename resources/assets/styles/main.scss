@@ -1,0 +1,12 @@
+$text-direction: rtl;
+$body-font-family: IranSansZ, "sans-serif" , Tahoma;
+
+@import "foundation";
+
+
+@import "iransans.scss";
+@import "global.scss";
+@import "header.scss";
+@import "content.scss";
+@import "home.scss";
+@import "signin.scss";

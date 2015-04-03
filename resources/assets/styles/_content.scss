@@ -1,0 +1,36 @@
+#content {
+  @extend .row;
+  max-width: 100%;
+  padding: 0 25px;
+}
+
+.widget {
+  h4 {
+    border-bottom: 1px solid #ccc;
+    font-size: 19px;
+  }
+}
+
+.post {
+  border-bottom: 1px solid #ccc;
+
+  &-details {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+  }
+
+  &-content {
+    font-size: 17px;
+    margin: 10px 0;
+  }
+
+  &-footer {
+    font-size: 13px;
+    color: #999;
+
+    .readMore {
+      float: left;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+::selection {
+  background: rgba(255, 200, 0, 0.4);
+}
+
+::-moz-selection {
+  background: rgba(255, 200, 0, 0.4);
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  font-family: IranSansZ, Tahoma;
+  font-size: 14px;
+  line-height: 1.3;
+}

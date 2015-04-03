@@ -1,1 +1,32 @@
 {% extends "layouts.base" %}
+{% block sidebar %}
+    {% for i in 1..5 %}
+    <div class="widget">
+        <h4>
+            ابزارک آزمایشی
+        </h4>
+        تستس تستست تسستست ستست
+    </div>
+    {% endfor %}
+{% endblock %}
+{% block content %}
+    {% for post in posts %}
+        <article class="post">
+            <h3>
+                <a href="#">{{ post.title }}</a>
+            </h3>
+            <div class="post-details">
+                نوشته‌شده توسط <em>علیرضا توفیقی</em> در دوروز پیش در دسته‌بندی‌تست
+            </div>
+            <div class="post-content">
+                {{ post.content_parsed|raw }}
+            </div>
+            <div class="post-footer">
+                <a class="readMore" href="#">
+                    ادامه‌ی نوشته
+                </a>
+                ۲۰۰ دیدگاه
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}

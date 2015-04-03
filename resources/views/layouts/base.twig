@@ -1,74 +1,73 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="fa" dir="rtl">
+
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PenCMS {% if block('title') %} · {% endif %}{% block title %}{% endblock %}</title>
-    <link href="{{ asset('css/global.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/styles/main.min.css') }}">
     {% block head %}{% endblock %}
 </head>
 <body>
-<nav class="navbar navbar-pencms navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">باز/بستن منو</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="{{ url('home') }}">
-                        خانه
-                    </a>
-                </li>
-                <li><a href="#about">درباره</a></li>
-                <li><a href="#contact">تماس با ما</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-left">
-                <li><a>{{ auth_user.user.name }}</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
+
 <header>
-    <div class="container">
-        <h1 class="hidden">PenCMS</h1>
-        <div class="logo">
-            <img src="{{ asset('img/logo.png') }}" alt="Logo">
-        </div>
-        <ol class="breadcrumb">
-            <li class="active">PenCMS</li>
-        </ol>
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name show-for-small-only">
+                <h1><a href="#">PenCMS</a></h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+
+            <ul class="right">
+                <li class="active"><a href="#">خانه</a></li>
+                <li><a href="#">درباره‌ی من</a></li>
+            </ul>
+
+            <ul class="left">
+                <li class="has-form">{# TODO: Search#}
+                    <form class="collapse">
+                        <input type="text" placeholder="جستجو">
+                    </form>
+                </li>
+            </ul>
+        </section>
+    </nav>
+    <div class="logo">
+        <a href="#">
+            <img src="{{ asset('assets/images/logo.png') }}">
+        </a>
     </div>
 </header>
-<section>
-    <div class="container" id="content">
-        {% if block('sidebar') %}
-            <div class="row">
-                <div class="col-md-8 col-lg-9">
-                    {% block content %}{% endblock %}
-                </div>
-                <div class="col-md-4 col-lg-3">
-                    {% block sidebar %}{% endblock %}
-                </div>
-            </div>
-        {% else %}
-            {{ block('content') }}
-        {% endif %}
+<section id="content">
+    {% if block('sidebar') %}
+        <div class="large-2 columns sidebar">
+        {% block sidebar %}{% endblock %}
     </div>
+        <div class="large-10 columns">
+        {% block content %}{% endblock %}
+    </div>
+    {% else %}
+        {{ block('content') }}
+    {% endif %}
 </section>
 <footer>
-    <div class="container">
-        با افتخار قدرت‌گرفته از: <a href="http://www.pencms.ir" target="_blank" title="سیستم مدیریت محتوای PenCMS">PenCMS</a>
+    <div class="poworedBy">
+        قدرت‌گرفته از
+        <a href="http://www.pencms.ir" target="_blank">PenCMS</a>
     </div>
+    حق چاپ برای این وب‌سایت محفوظ می‌باشد.
 </footer>
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendor.min.js') }}"></script>
+<script src="{{ asset('assets/js/main.min.js') }}"></script>
 {% block js %}{% endblock %}
+<script>
+    $(document).foundation();
+</script>
 </body>
 </html>

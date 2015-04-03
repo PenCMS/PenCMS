@@ -1,0 +1,20 @@
+.topBar {
+  @extend .top-bar;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  padding: 20px 50px;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  margin: 5px 50px;
+  padding: 10px 0;
+  font-size: 12px;
+
+  .poworedBy {
+    float: left;
+  }
+
+}

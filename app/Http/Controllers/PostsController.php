@@ -1,6 +1,6 @@
 <?php namespace PenCMS\Http\Controllers;
 
-use PenCMS\DB\Models\Post;
+use PenCMS\Database\Models\Post;
 
 class PostsController extends Controller {
 
@@ -22,7 +22,7 @@ class PostsController extends Controller {
 	 */
 	public function index()
 	{
-        $posts = Post::all();
+        $posts = Post::paginate(10);
 		return view('home.index', compact('posts'));
 	}
 
