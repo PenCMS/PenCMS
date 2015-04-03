@@ -1,0 +1,21 @@
+language: php
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+
+env:
+  - DB=mysql
+  - DB_HOST=localhost
+  - DB_DATABASE=pencms
+  - DB_USERNAME=root
+  - DB_PASSWORD=
+
+before_script:
+  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS pencms;" -uroot; fi
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+  - composer update --prefer-source --no-interaction --dev
+
+script:
+  - phpunit
