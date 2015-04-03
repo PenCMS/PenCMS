@@ -4,10 +4,6 @@ php:
 
 env:
   - DB=mysql
-  - DB_HOST=localhost
-  - DB_DATABASE=pencms
-  - DB_USERNAME=root
-  - DB_PASSWORD=
 
 before_script:
   - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS pencms;" -uroot; fi
